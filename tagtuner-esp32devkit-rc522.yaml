@@ -15,7 +15,7 @@
 #   MISO       -> GPIO 19
 #   IRQ        -> Not connected
 #   GND        -> GND
-#   RST        -> GPIO 22
+#   RST        -> GPIO 21
 #   3.3V       -> 3.3V
 #
 # Button/Encoder Wiring:
@@ -34,7 +34,7 @@ substitutions:
   magic: "260103"
   # RC522 SPI pins
   rc522_cs_pin: "5"
-  rc522_rst_pin: "22"
+  rc522_rst_pin: "21"
 
 packages:
   # Use local includes for development, or switch to GitHub for production

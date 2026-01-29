@@ -36,7 +36,7 @@ The RC522 module uses SPI interface instead of I2C, making it a cost-effective a
 | MISO      | GPIO 19   | SPI Master In Slave Out |
 | IRQ       | N/C       | Not connected (not used) |
 | GND       | GND       | Ground |
-| RST       | GPIO 22   | Reset |
+| RST       | GPIO 21   | Reset (LOW=power-down, HIGH=reset) |
 | 3.3V      | 3.3V      | Power (3.3V only!) |
 
 **IMPORTANT:** The RC522 module operates at 3.3V only. Do NOT connect it to 5V as this will damage the module!
