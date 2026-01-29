@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650" width="900" height="650">
+  <defs>
+    <style>
+      .title { font: bold 24px sans-serif; fill: #333; }
+      .subtitle { font: 14px sans-serif; fill: #666; }
+      .board-label { font: bold 16px sans-serif; fill: #fff; }
+      .pin-label { font: 11px monospace; fill: #333; }
+      .pin-label-white { font: 11px monospace; fill: #fff; }
+      .connection-label { font: bold 12px sans-serif; fill: #333; }
+      .legend-text { font: 12px sans-serif; fill: #333; }
+      .note-text { font: 11px sans-serif; fill: #555; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="650" fill="#f5f5f5"/>
+
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" class="title">ESP32 DevKit V1 + RC522 RFID Wiring Diagram</text>
+  <text x="450" y="55" text-anchor="middle" class="subtitle">TagTuner Project - SPI Connection</text>
+
+  <!-- ESP32 DevKit Board -->
+  <g transform="translate(80, 100)">
+    <!-- Board body -->
+    <rect x="0" y="0" width="180" height="380" rx="8" fill="#1a1a2e" stroke="#333" stroke-width="2"/>
+
+    <!-- USB connector -->
+    <rect x="55" y="-15" width="70" height="25" rx="3" fill="#888" stroke="#666" stroke-width="1"/>
+    <text x="90" y="0" text-anchor="middle" class="pin-label-white">USB</text>
+
+    <!-- Board label -->
+    <text x="90" y="35" text-anchor="middle" class="board-label">ESP32</text>
+    <text x="90" y="55" text-anchor="middle" class="board-label">DevKit V1</text>
+
+    <!-- ESP32 chip -->
+    <rect x="40" y="70" width="100" height="80" rx="4" fill="#444" stroke="#555" stroke-width="1"/>
+    <text x="90" y="115" text-anchor="middle" fill="#aaa" style="font: 10px sans-serif;">ESP32-WROOM</text>
+
+    <!-- Left side pins (top to bottom) -->
+    <g>
+      <!-- 3V3 -->
+      <rect x="-25" y="170" width="35" height="18" rx="2" fill="#e74c3c"/>
+      <text x="-7" y="183" text-anchor="middle" class="pin-label-white">3V3</text>
+
+      <!-- GND -->
+      <rect x="-25" y="195" width="35" height="18" rx="2" fill="#2c3e50"/>
+      <text x="-7" y="208" text-anchor="middle" class="pin-label-white">GND</text>
+
+      <!-- GPIO4 (Button) -->
+      <rect x="-25" y="220" width="35" height="18" rx="2" fill="#27ae60"/>
+      <text x="-7" y="233" text-anchor="middle" class="pin-label-white">GP4</text>
+
+      <!-- GPIO16 (Encoder A) -->
+      <rect x="-25" y="245" width="35" height="18" rx="2" fill="#9b59b6"/>
+      <text x="-7" y="258" text-anchor="middle" class="pin-label-white">GP16</text>
+
+      <!-- GPIO17 (Encoder B) -->
+      <rect x="-25" y="270" width="35" height="18" rx="2" fill="#9b59b6"/>
+      <text x="-7" y="283" text-anchor="middle" class="pin-label-white">GP17</text>
+
+      <!-- GPIO5 (CS) -->
+      <rect x="-25" y="295" width="35" height="18" rx="2" fill="#3498db"/>
+      <text x="-7" y="308" text-anchor="middle" class="pin-label-white">GP5</text>
+    </g>
+
+    <!-- Right side pins (top to bottom) -->
+    <g>
+      <!-- GPIO2 (LED) -->
+      <rect x="170" y="170" width="35" height="18" rx="2" fill="#f39c12"/>
+      <text x="187" y="183" text-anchor="middle" class="pin-label-white">GP2</text>
+
+      <!-- GPIO22 (RST) -->
+      <rect x="170" y="195" width="35" height="18" rx="2" fill="#3498db"/>
+      <text x="187" y="208" text-anchor="middle" class="pin-label-white">GP22</text>
+
+      <!-- GPIO23 (MOSI) -->
+      <rect x="170" y="220" width="35" height="18" rx="2" fill="#3498db"/>
+      <text x="187" y="233" text-anchor="middle" class="pin-label-white">GP23</text>
+
+      <!-- GPIO19 (MISO) -->
+      <rect x="170" y="245" width="35" height="18" rx="2" fill="#3498db"/>
+      <text x="187" y="258" text-anchor="middle" class="pin-label-white">GP19</text>
+
+      <!-- GPIO18 (SCK) -->
+      <rect x="170" y="270" width="35" height="18" rx="2" fill="#3498db"/>
+      <text x="187" y="283" text-anchor="middle" class="pin-label-white">GP18</text>
+    </g>
+  </g>
+
+  <!-- RC522 RFID Module -->
+  <g transform="translate(550, 130)">
+    <!-- Board body -->
+    <rect x="0" y="0" width="200" height="280" rx="8" fill="#1565c0" stroke="#0d47a1" stroke-width="2"/>
+
+    <!-- Board label -->
+    <text x="100" y="35" text-anchor="middle" class="board-label">RC522</text>
+    <text x="100" y="55" text-anchor="middle" class="board-label">RFID Module</text>
+
+    <!-- Antenna coil representation -->
+    <rect x="25" y="70" width="150" height="120" rx="8" fill="none" stroke="#fff" stroke-width="3"/>
+    <rect x="35" y="80" width="130" height="100" rx="6" fill="none" stroke="#fff" stroke-width="2"/>
+    <rect x="45" y="90" width="110" height="80" rx="4" fill="none" stroke="#fff" stroke-width="1"/>
+    <text x="100" y="135" text-anchor="middle" fill="#fff" style="font: bold 14px sans-serif;">RFID</text>
+    <text x="100" y="155" text-anchor="middle" fill="#fff" style="font: bold 14px sans-serif;">ANTENNA</text>
+
+    <!-- Left side pins (directly on board) -->
+    <g>
+      <!-- SDA (SS) -->
+      <rect x="-30" y="205" width="40" height="18" rx="2" fill="#3498db"/>
+      <text x="-10" y="218" text-anchor="middle" class="pin-label-white">SDA</text>
+
+      <!-- SCK -->
+      <rect x="-30" y="228" width="40" height="18" rx="2" fill="#3498db"/>
+      <text x="-10" y="241" text-anchor="middle" class="pin-label-white">SCK</text>
+
+      <!-- MOSI -->
+      <rect x="-30" y="251" width="40" height="18" rx="2" fill="#3498db"/>
+      <text x="-10" y="264" text-anchor="middle" class="pin-label-white">MOSI</text>
+    </g>
+
+    <!-- Right side pins -->
+    <g>
+      <!-- MISO -->
+      <rect x="190" y="205" width="40" height="18" rx="2" fill="#3498db"/>
+      <text x="210" y="218" text-anchor="middle" class="pin-label-white">MISO</text>
+
+      <!-- IRQ (not used) -->
+      <rect x="190" y="228" width="40" height="18" rx="2" fill="#95a5a6"/>
+      <text x="210" y="241" text-anchor="middle" class="pin-label-white">IRQ</text>
+
+      <!-- GND -->
+      <rect x="190" y="251" width="40" height="18" rx="2" fill="#2c3e50"/>
+      <text x="210" y="264" text-anchor="middle" class="pin-label-white">GND</text>
+    </g>
+
+    <!-- Bottom pins -->
+    <g>
+      <!-- RST -->
+      <rect x="50" y="275" width="40" height="18" rx="2" fill="#3498db"/>
+      <text x="70" y="288" text-anchor="middle" class="pin-label-white">RST</text>
+
+      <!-- 3.3V -->
+      <rect x="110" y="275" width="40" height="18" rx="2" fill="#e74c3c"/>
+      <text x="130" y="288" text-anchor="middle" class="pin-label-white">3.3V</text>
+    </g>
+  </g>
+
+  <!-- Connection wires -->
+  <g fill="none" stroke-width="3" stroke-linecap="round">
+    <!-- 3V3 to 3.3V (Red) -->
+    <path d="M 55 279 Q 20 279 20 350 Q 20 430 660 423" stroke="#e74c3c"/>
+    <circle cx="55" cy="279" r="4" fill="#e74c3c"/>
+    <circle cx="660" cy="423" r="4" fill="#e74c3c"/>
+
+    <!-- GND to GND (Black) -->
+    <path d="M 55 304 Q 10 304 10 460 Q 10 500 800 389" stroke="#2c3e50"/>
+    <circle cx="55" cy="304" r="4" fill="#2c3e50"/>
+    <circle cx="800" cy="389" r="4" fill="#2c3e50"/>
+
+    <!-- GPIO5 to SDA/SS (Blue - CS) -->
+    <path d="M 55 404 Q 280 404 280 344 L 520 344" stroke="#3498db"/>
+    <circle cx="55" cy="404" r="4" fill="#3498db"/>
+    <circle cx="520" cy="344" r="4" fill="#3498db"/>
+
+    <!-- GPIO22 to RST (Blue) -->
+    <path d="M 285 304 Q 350 304 350 430 Q 350 535 620 535" stroke="#16a085"/>
+    <circle cx="285" cy="304" r="4" fill="#16a085"/>
+    <circle cx="620" cy="535" r="4" fill="#16a085"/>
+
+    <!-- GPIO23 to MOSI (Blue) -->
+    <path d="M 285 329 Q 400 329 400 390 L 520 390" stroke="#2980b9"/>
+    <circle cx="285" cy="329" r="4" fill="#2980b9"/>
+    <circle cx="520" cy="390" r="4" fill="#2980b9"/>
+
+    <!-- GPIO19 to MISO (Blue) -->
+    <path d="M 285 354 Q 450 354 450 280 Q 450 200 450 344 L 800 344" stroke="#8e44ad"/>
+    <circle cx="285" cy="354" r="4" fill="#8e44ad"/>
+    <circle cx="800" cy="344" r="4" fill="#8e44ad"/>
+
+    <!-- GPIO18 to SCK (Blue) -->
+    <path d="M 285 379 Q 320 379 320 367 L 520 367" stroke="#1abc9c"/>
+    <circle cx="285" cy="379" r="4" fill="#1abc9c"/>
+    <circle cx="520" cy="367" r="4" fill="#1abc9c"/>
+  </g>
+
+  <!-- Connection Labels -->
+  <g class="connection-label">
+    <text x="340" y="295">CS (GPIO5)</text>
+    <text x="340" y="320">MOSI (GPIO23)</text>
+    <text x="340" y="345">SCK (GPIO18)</text>
+    <text x="340" y="370">MISO (GPIO19)</text>
+    <text x="340" y="460">RST (GPIO22)</text>
+    <text x="340" y="420">3.3V</text>
+    <text x="340" y="490">GND</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(50, 520)">
+    <rect x="0" y="0" width="400" height="110" rx="5" fill="#fff" stroke="#ddd" stroke-width="1"/>
+    <text x="15" y="25" style="font: bold 14px sans-serif; fill: #333;">Pin Connections Legend:</text>
+
+    <!-- SPI Connections -->
+    <rect x="15" y="35" width="15" height="15" fill="#3498db"/>
+    <text x="35" y="47" class="legend-text">SPI Bus (MOSI, MISO, SCK, CS)</text>
+
+    <!-- Power -->
+    <rect x="15" y="55" width="15" height="15" fill="#e74c3c"/>
+    <text x="35" y="67" class="legend-text">Power (3.3V)</text>
+
+    <!-- Ground -->
+    <rect x="15" y="75" width="15" height="15" fill="#2c3e50"/>
+    <text x="35" y="87" class="legend-text">Ground (GND)</text>
+
+    <!-- Optional -->
+    <rect x="200" y="35" width="15" height="15" fill="#27ae60"/>
+    <text x="220" y="47" class="legend-text">Button (GPIO4)</text>
+
+    <rect x="200" y="55" width="15" height="15" fill="#9b59b6"/>
+    <text x="220" y="67" class="legend-text">Rotary Encoder (GPIO16, 17)</text>
+
+    <rect x="200" y="75" width="15" height="15" fill="#f39c12"/>
+    <text x="220" y="87" class="legend-text">LED (GPIO2 built-in)</text>
+  </g>
+
+  <!-- Important notes -->
+  <g transform="translate(480, 520)">
+    <rect x="0" y="0" width="380" height="110" rx="5" fill="#fff3cd" stroke="#ffc107" stroke-width="1"/>
+    <text x="15" y="25" style="font: bold 14px sans-serif; fill: #856404;">Important Notes:</text>
+    <text x="15" y="45" class="note-text">- RC522 operates at 3.3V only (do NOT use 5V!)</text>
+    <text x="15" y="62" class="note-text">- IRQ pin is not connected (not required)</text>
+    <text x="15" y="79" class="note-text">- Use short wires for reliable SPI communication</text>
+    <text x="15" y="96" class="note-text">- Button/Encoder are optional for basic operation</text>
+  </g>
+</svg>
